@@ -78,8 +78,19 @@ def main():
     if comments == "" or comments == None:
         comments = "None"
 
+    # Create and open original review file
+    filename1 = ("../files/reviews/%s.review" % (course))
+    filenametemp = ("../files/reviews/%stemp.review" % (course))
+    if os.path.isfile(filename1) and os.path.getsize(filename1) > 0:
+        file1 = open(filename1, "r+")
+        filetemp = open(filenametemp, "w+")
+        filetemp.write("\n\n")
+        filetemp.write(file1.read())
+        filetemp.close()
+        file1.close()
+
     filename = ("../files/reviews/%s.review" % (course))
-    file = open(filename, "a+")
+    file = open(filename, "w+")
 
     file.write("<p>Review posted on %s at %s</p>" %
                (datetime.datetime.now().strftime("%a, %b %d, %Y"), datetime.datetime.now().strftime("%I:%M %p")))
@@ -119,7 +130,13 @@ def main():
                (prosCons))
     file.write(
         "<p><b>Other comments (e.g.: Suggestions for future course takers? Follow up courses to take?)</b>: %s</p>" % (prosCons))
-    file.write("<p></br></p>\n\n")
+    file.write("<p></br></p>")
+
+    if os.path.isfile(filenametemp) and os.path.getsize(filenametemp) > 0:
+        filetemp2 = open(filenametemp, "r+")
+        file.write(filetemp2.read())
+        filetemp2.close()
+        os.remove("../files/reviews/%stemp.review" % (course))
     file.close()
 
     print("Content-type: text/html\r\n\r")
