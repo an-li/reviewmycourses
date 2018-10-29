@@ -1,5 +1,5 @@
 ReviewMyCourses
-Information and detailed reviews for all McGill courses
+Information, documents and detailed reviews for all McGill courses
 
 Made by:
 * Abdullahi Elmi

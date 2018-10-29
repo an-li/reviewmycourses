@@ -92,8 +92,19 @@ def printCourseInfo(courseInfo, courseFound):
         print("<p><b>Term(s): </b>", courseInfo[5], "</p></br>")
         print("<p><b>Link to McGill eCalendar: </b><a href=\"%s\">%s</a></p></br>" %
               (courseInfo[6], courseInfo[6]))
+        print("<p>Jump to <a href=\"#documents\" class=\"btn btn-primary\">Documents</a> <a href=\"#reviews\" class=\"btn btn-primary\">Reviews</a></p>")
     print("</section>")
     if courseFound != 0:
+        print("<section id=\"documents\">")
+        print("<h4>Course documents</h4></br>")
+        print("<form action=\"../../cgi-bin/upload.php\" method=\"POST\">")
+        print("<input type=\"file\" name=\"fileToUpload\"></br>")
+        print("<input type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" value=\"Upload a document\" name=\"upload\">")
+        print("</form>")
+
+        print("</br><p>There are currently no documents for this course.</p>")
+        print("<p>Jump to <a href=\"#info\" class=\"btn btn-primary\">Course info</a> <a href=\"#reviews\" class=\"btn btn-primary\">Reviews</a></p>")
+        print("</section>")
         print("<section id=\"reviews\">")
         print("<h4>Course reviews</h4></br>")
         filename = ("../files/reviews/%s.review" % (courseInfo[7]))
@@ -105,6 +116,7 @@ def printCourseInfo(courseInfo, courseFound):
             file.close()
         else:
             print("<p>There are currently no reviews for this course.</p>")
+        print("<p>Jump to <a href=\"#info\" class=\"btn btn-primary\">Course info</a> <a href=\"#documents\" class=\"btn btn-primary\">Documents</a></p>")
     print("</section>")
     print("""</main>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\"
