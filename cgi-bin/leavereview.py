@@ -153,13 +153,13 @@ def printReviewForm(course):
                 <div class=\"collapse navbar-collapse\" id=\"navbar\">
                 <ul class=\"navbar-nav mr-auto\">
                     <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"../index.html\">Home</a>
+                        <a class=\"nav-link\" href=\"../htdocs/index.html\">Home</a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"courses.py\">Courses</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"../about.html\">About</a>
+                        <a class=\"nav-link\" href=\"../htdocs/about.html\">About</a>
                     </li>
                 </ul>
                 <form class=\"form-inline my-2 my-lg-0\" action=\"search.py\" method=\"GET\">
@@ -174,6 +174,7 @@ def printReviewForm(course):
     print("""<h3>Please leave a review for course %s:</h3>""" % (course))
     print("""<br>
                     <form action=\"reviewtotext.py\" method=\"POST\">
+                    <p>&#9888; <b>NEVER</b> submit sensitive or personal information, such as passwords, student ID numbers, solutions to material (past, current or upcoming) or email addresses in reviews. &#9888;</p>
                     <input type=\"hidden\" name=\"course\" value=%s>""" % (course))
     print("""<div class=\"form-group row\">
                             <label for=\"author\" class=\"col-md-4 col-form-label\">Author (optional)</label>
@@ -446,7 +447,8 @@ def printReviewForm(course):
                                 <textarea class=\"form-control\" rows=\"10\" cols=\"50\" name=\"comments\" id=\"commentsId\"></textarea>
                             </div>
                         </div>
-                        <center><input class=\"form-control\" type=\"submit\" name=\"Submit review\"></center>
+                        <p>&#9888; By submitting, you agree that this review does not contain ANY sensitive or personal information, such as passwords, student ID numbers, solutions to material (past, current or upcoming) or email addresses. &#9888;</p>
+                        <center><input class=\"form-control\" type=\"submit\" value=\"I agree, submit review\"></center>
                     </form>
                 </section>
             </main>

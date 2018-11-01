@@ -65,13 +65,13 @@ def printCourseInfo(courseInfo, courseFound):
                 <div class=\"collapse navbar-collapse\" id=\"navbar\">
                 <ul class=\"navbar-nav mr-auto\">
                     <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"../index.html\">Home</a>
+                        <a class=\"nav-link\" href=\"../htdocs/index.html\">Home</a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"courses.py\">Courses</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"../about.html\">About</a>
+                        <a class=\"nav-link\" href=\"../htdocs/about.html\">About</a>
                     </li>
                 </ul>
                 <form class=\"form-inline my-2 my-lg-0\" action=\"search.py\" method=\"GET\">
@@ -97,9 +97,12 @@ def printCourseInfo(courseInfo, courseFound):
     if courseFound != 0:
         print("<section id=\"documents\">")
         print("<h4>Course documents</h4></br>")
-        print("<form action=\"../../cgi-bin/upload.php\" method=\"POST\">")
+        print("<form action=\"upload.php\" method=\"POST\">")
         print("<input type=\"file\" name=\"fileToUpload\"></br>")
-        print("<input type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" value=\"Upload a document\" name=\"upload\">")
+        print("<input type=\"hidden\" name=\"course\" value=%s>" %
+              (courseInfo[7]))
+        print("</br><p>&#9888; By submitting, you agree that these documents cannot be used unfairly and do not contain solutions to upcoming material. &#9888;</p>")
+        print("<input type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" value=\"I agree, upload document\" name=\"upload\">")
         print("</form>")
 
         print("</br><p>There are currently no documents for this course.</p>")
