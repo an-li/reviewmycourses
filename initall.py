@@ -12,15 +12,16 @@ from json import loads
 
 
 def main():
-    shutil.rmtree("../files/documents/")  # Remove documents folder
-    os.makedirs("../files/documents")  # Re-create documents folder
+    if os.path.exists("../files/documents/"):
+        # Remove documents folder if exists
+        shutil.rmtree("../files/documents/")
     initDatabase()
     initTables()
     initCourses()
 
     # Go to home page after initializing databases
     print("Content-type: text/html\r\n\r")
-    print("<html><body><meta http-equiv=\"refresh\" content=\"0; URL='index.html'\" /></body></html>")
+    print("<html><body><meta http-equiv=\"refresh\" content=\"0; URL='../index.html'\" /></body></html>")
 
 
 def initDatabase():
@@ -92,9 +93,9 @@ def initTables():
     mycursor.execute("""CREATE TABLE documents (
         documentid INT AUTO_INCREMENT PRIMARY KEY,
         tstamp TEXT NOT NULL,
+        title TEXT,
         course VARCHAR(255) NOT NULL,
-        url TEXT NOT NULL,
-        description TEXT
+        url TEXT NOT NULL
     )""")
 
 

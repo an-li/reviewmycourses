@@ -23,4 +23,4 @@ How to run the site:
 1. Copy and paste all contents of the cgi-bin folder to the cgi-bin folder of xampp
 2. Copy and paste the files folder to the xampp folder
 3. Copy and paste all html files and initialize.py in the root directory to the htdocs folder of xampp
-4. Open localhost/initialize.py in browser to initialize the database if it does not exist or to clear and reinitialize the existing database. If user wants to use the website without erasing existing data, open localhost/index.html instead.
+4. Open localhost/initall.py in browser to initialize the database if it does not exist or to clear and reinitialize the existing database. If user wants to use the website with existing data, open localhost/index.html instead.

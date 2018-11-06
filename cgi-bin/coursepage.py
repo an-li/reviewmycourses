@@ -108,7 +108,18 @@ def printCourseInfo(courseInfo, courseFound):
         print("<section id=\"documents\">")
         print("<h4>Course documents</h4></br>")
         print("<form action=\"upload.php\" method=\"POST\">")
-        print("<input type=\"file\" name=\"fileToUpload\"></br>")
+        print("""<div class=\"form-group row\">
+                            <label for=\"title\" class=\"col-md-4 col-form-label\">Title: </label>
+                            <div class=\"col-md-8\">
+                                <input type=\"text\" class=\"form-control\" name=\"title\">
+                            </div>
+                        </div>""")
+        print("""<div class=\"form-group row\">
+                            <label for=\"file\" class=\"col-md-4 col-form-label\">File: </label>
+                            <div class=\"col-md-8\">
+                                <input type=\"file\" name=\"file\">
+                            </div>
+                        </div>""")
         print("<input type=\"hidden\" name=\"course\" value=%s>" %
               (courseInfo[7]))
         print("</br><p>&#9888; By submitting, you agree that these documents cannot be used unfairly and do not contain solutions to upcoming material. &#9888;</p>")
