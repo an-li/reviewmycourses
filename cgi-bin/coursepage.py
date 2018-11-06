@@ -1,5 +1,6 @@
 #!C:\Program Files\Python37\python.exe
 
+import mysql.connector
 import cgi
 import json
 import os
@@ -17,23 +18,31 @@ def main():
 
 
 def findCourse(courseName):
-    file = open("../files/courses.list", "r")
-    text = file.read().replace('\n', '')
-    data = loads(text)
-    file.close()
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        passwd="",
+        database="reviewmycourses",
+    )
 
-    for entry in data:
-        if courseName == entry['name']:
-            title = entry['title']
-            faculty = entry['faculty']
-            description = entry['description']
-            notesList = entry['notes']
-            notes = '<br />'.join(notesList)
-            instructors = entry['instructors']
-            terms = entry['terms']
-            link = entry['link']
-            return [title, faculty, description, notes, instructors, terms, link, courseName], 1
-    return["Error: Course not found!"], 0
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM courses WHERE course = %s",
+                     (courseName,), multi=True)
+
+    myresult = mycursor.fetchone()
+
+    if not myresult is None:
+        course = myresult[0]
+        title = myresult[1]
+        faculty = myresult[2]
+        description = myresult[3]
+        notes = myresult[4]
+        instructors = myresult[5]
+        terms = myresult[6]
+        link = myresult[7]
+        return [title, faculty, description, notes, instructors, terms, link, course], 1
+    else:
+        return["Error: Course not found!"], 0
 
 
 def printCourseInfo(courseInfo, courseFound):
@@ -95,6 +104,7 @@ def printCourseInfo(courseInfo, courseFound):
         print("<p>Jump to <a href=\"#documents\" class=\"btn btn-primary\">Documents</a> <a href=\"#reviews\" class=\"btn btn-primary\">Reviews</a></p>")
     print("</section>")
     if courseFound != 0:
+
         print("<section id=\"documents\">")
         print("<h4>Course documents</h4></br>")
         print("<form action=\"upload.php\" method=\"POST\">")
@@ -103,23 +113,98 @@ def printCourseInfo(courseInfo, courseFound):
               (courseInfo[7]))
         print("</br><p>&#9888; By submitting, you agree that these documents cannot be used unfairly and do not contain solutions to upcoming material. &#9888;</p>")
         print("<input type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" value=\"I agree, upload document\" name=\"upload\">")
-        print("</form>")
+        print("</form></br>")
 
-        print("</br><p>There are currently no documents for this course.</p>")
+        mydb = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            passwd="",
+            database="reviewmycourses",
+        )
+        mycursor = mydb.cursor()
+
+        # Please update this section
+        mycursor.execute(
+            "SELECT * FROM documents WHERE course = %s ORDER BY documentid DESC", (courseInfo[7],), multi=True)
+
+        myresults = mycursor.fetchall()
+
+        if mycursor.rowcount > 0:
+            print("")  # Update this
+        else:
+            print("<p>There are currently no documents for this course.</p>")
+        mydb.close()
+
         print("<p>Jump to <a href=\"#info\" class=\"btn btn-primary\">Course info</a> <a href=\"#reviews\" class=\"btn btn-primary\">Reviews</a></p>")
         print("</section>")
         print("<section id=\"reviews\">")
         print("<h4>Course reviews</h4></br>")
-        filename = ("../files/reviews/%s.review" % (courseInfo[7]))
         print("<a class=\"btn btn-primary btn-lg btn-block\" href=\"leavereview.py?course=%s\">Leave a review</a></br>" %
               (courseInfo[7]))
-        if os.path.isfile(filename) and os.path.getsize(filename) > 0:
-            file = open(filename, "r+")
-            print(file.read())
-            file.close()
+
+        mydb2 = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            passwd="",
+            database="reviewmycourses",
+        )
+        mycursor2 = mydb2.cursor()
+
+        mycursor2.execute("SELECT * FROM reviews WHERE course = %s ORDER BY reviewid DESC",
+                          (courseInfo[7],), multi=True)
+
+        myresults2 = mycursor2.fetchall()
+
+        if mycursor2.rowcount > 0:
+            for result in myresults2:
+                print("<p>Review posted on %s</p>" % result[1])
+                print("<p><b>Review by</b> %s</p>" % (result[3]))
+                print("<p><b>Your major/minor</b>: %s</p>" % (result[4]))
+                print(
+                    "<p><b>Semester and year this course was taken</b>: %s %s</p>" % (result[5], result[6]))
+                print("<p><b>Name(s) of professor(s)</b>: %s</p>" %
+                      (result[7]))
+                if result[7] != "No Professor(s)":
+                    print("<p><b>How good is/are the professor(s)?</b> %s</p>" %
+                          (result[8]))
+                print(
+                    "<p><b>Name(s) of TA(s) (if applicable)</b>: %s</p>" % (result[9]))
+                if result[9] != "No TA(s)":
+                    print(
+                        "<p><b>How good is/are the TA(s) you have interacted with?</b> %s</p>" % (result[10]))
+                print("<p><b>How easy is this course?</b> %s</p>" %
+                      (result[11]))
+                print("<p><b>How useful is this course?</b> %s</p>" %
+                      (result[12]))
+                print("<p><b>How cool is this course?</b> %s</p>" %
+                      (result[13]))
+                print("<p><b>How heavy is the workload?</b> %s</p>" %
+                      (result[14]))
+                print("<p><b>How useful are the lectures?</b> %s</p>" %
+                      (result[15]))
+                print(
+                    "<p><b>How useful are the pre-requisites?</b> %s</p>" % (result[16]))
+                print(
+                    "<p><b>How easy are the assignments (if any)?</b> %s</p>" % (result[17]))
+                print("<p><b>Required textbook(s):</b> %s</p>" %
+                      (result[18]))
+                print("<p><b>Was this course recorded?</b> %s</p>" %
+                      (result[19]))
+                print("<p><b>Your grade</b>: %s</p>" % (result[20]))
+                print("<p><b>Class average</b>: %s</p>" % (result[21]))
+                print("<p><b>Did the professor curve the grades?</b> %s</p>" %
+                      (result[22]))
+                print("<p><b>Do you recommend this course?</b> %s</p>" %
+                      (result[23]))
+                print("<p><b>Pros and cons about this course</b>: %s</p>" %
+                      (result[24]))
+                print(
+                    "<p><b>Other comments (e.g.: Suggestions for future course takers? Follow up courses to take?)</b>: %s</p>" % (result[25]))
+                print("<p></br></p>")
         else:
             print("<p>There are currently no reviews for this course.</p>")
-        print("<p>Jump to <a href=\"#info\" class=\"btn btn-primary\">Course info</a> <a href=\"#documents\" class=\"btn btn-primary\">Documents</a></p>")
+        mydb2.close()
+    print("<p>Jump to <a href=\"#info\" class=\"btn btn-primary\">Course info</a> <a href=\"#documents\" class=\"btn btn-primary\">Documents</a></p>")
     print("</section>")
     print("""</main>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\"

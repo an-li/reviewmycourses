@@ -173,7 +173,7 @@ def printReviewForm(course):
                 <section name=\"review\">""")
     print("""<h3>Please leave a review for course %s:</h3>""" % (course))
     print("""<br>
-                    <form action=\"reviewtotext.py\" method=\"POST\">
+                    <form action=\"reviewtodb.py\" method=\"POST\">
                     <p>&#9888; <b>NEVER</b> submit sensitive or personal information, such as passwords, student ID numbers, solutions to material (past, current or upcoming) or email addresses in reviews. &#9888;</p>
                     <input type=\"hidden\" name=\"course\" value=%s>""" % (course))
     print("""<div class=\"form-group row\">
