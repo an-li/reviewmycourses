@@ -1,6 +1,6 @@
-ReviewMyCourses
-Information and detailed reviews for all McGill courses
-Web server: XAMPP Apache 7.2.11
+ReviewMyCourses\
+Information and detailed reviews for all McGill courses\
+Web server: XAMPP Apache 7.2.11\
 Python version used: 3.7.0 for Windows 64-bit
 
 Made by:
@@ -23,4 +23,4 @@ How to run the site:
 1. Copy and paste all contents of the cgi-bin folder to the cgi-bin folder of xampp
 2. Copy and paste the files folder to the xampp folder
 3. Copy and paste all html files and initialize.py in the root directory to the htdocs folder of xampp
-4. Open localhost/initialize.py in browser to initialize the database if it does not exist yet or to clear and reinitialize the existing database. If user wants to use the website without erasing existing data, open localhost/index.html instead.
+4. Open localhost/initialize.py in browser to initialize the database if it does not exist or to clear and reinitialize the existing database. If user wants to use the website without erasing existing data, open localhost/index.html instead.

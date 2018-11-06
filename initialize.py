@@ -18,7 +18,7 @@ def main():
     initTables()
     initCourses()
 
-    # Go to home page
+    # Go to home page after initializing databases
     print("Content-type: text/html\r\n\r")
     print("<html><body><meta http-equiv=\"refresh\" content=\"0; URL='index.html'\" /></body></html>")
 
