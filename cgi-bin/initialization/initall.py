@@ -12,17 +12,17 @@ from json import loads
 
 
 def main():
-    if os.path.exists("documents"):
+    if os.path.exists("../../htdocs/documents"):
         # Remove documents folder if exists
-        shutil.rmtree("documents", ignore_errors=True)
+        shutil.rmtree("../../htdocs/documents", ignore_errors=True)
     initDatabase()
     initTables()
     initCourses()
 
     # Go to home page after initializing databases
     print("Content-type: text/html\r\n\r")
-    print("<html><body>All databases initialized successfully!</br>Redirecting to home page... Click <a href=\"index.html\">here</a> if it does not.")
-    print("<meta http-equiv=\"refresh\" content=\"3; URL='index.html'\" /></body></html>")
+    print("<html><body>All databases initialized successfully!</br>Redirecting to home page... Click <a href=\"../../index.html\">here</a> if it does not.")
+    print("<meta http-equiv=\"refresh\" content=\"3; URL='../../index.html'\" /></body></html>")
 
 
 def initDatabase():
@@ -111,7 +111,7 @@ def initCourses():
 
     mycursor = mydb.cursor()
 
-    coursesList = "../support_files/courses.list"
+    coursesList = "../../support_files/courses.list"
 
     file = open(coursesList, "r")
     text = file.read().replace('\n', '')
