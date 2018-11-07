@@ -42,7 +42,7 @@ def initCourses():
         link TEXT NOT NULL
     )""")
 
-    coursesList = "../../files/courses.list"
+    coursesList = "../support_files/courses.list"
 
     file = open(coursesList, "r")
     text = file.read().replace('\n', '')

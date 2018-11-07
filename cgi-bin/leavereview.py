@@ -1,5 +1,6 @@
 #!"C:\Program Files\Python37\python.exe"
 
+import mysql.connector
 import cgi
 import json
 import os
@@ -19,15 +20,23 @@ def main():
 
 
 def findCourse(courseName):
-    file = open("../files/courses.list", "r")
-    text = file.read().replace('\n', '')
-    data = loads(text)
-    file.close()
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        passwd="",
+        database="reviewmycourses",
+    )
 
-    for entry in data:
-        if courseName == entry['name']:
-            return courseName
-    return "Error: Course not found!"
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM courses WHERE course = %s",
+                     (courseName,), multi=True)
+
+    myresult = mycursor.fetchone()
+
+    if not myresult is None:
+        return myresult[0]
+    else:
+        return "Error: Course not found!"
 
 
 def printReviewForm(course):

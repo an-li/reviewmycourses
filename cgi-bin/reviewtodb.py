@@ -88,7 +88,8 @@ def main():
     )
     mycursor = mydb.cursor()
 
-    dateTime = ("%s" % (datetime.datetime.now().strftime("%Y/%m/%d %H:%M")))
+    dateTime = ("%s" %
+                (datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")))
 
     mycursor.execute(
         "INSERT INTO reviews (tstamp, course, author, majorMinor, semester, year, profName, profGoodness, taName, taGoodness, easiness, usefulness, coolness, workload, lectures, prereqs, assignments, textbook, recorded, grade, classAverage, gradeCurved, recommend, prosCons, comments) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", [dateTime, course, author, majorMinor, semester, year, profName, profGoodness, taName, taGoodness, easiness, usefulness, coolness, workload, lectures, prereqs, assignments, textbook, recorded, grade, classAverage, gradeCurved, recommend, prosCons, comments])

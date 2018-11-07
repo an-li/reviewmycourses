@@ -12,9 +12,9 @@ from json import loads
 
 
 def main():
-    if os.path.exists("../files/documents/"):
+    if os.path.exists("../documents/"):
         # Remove documents folder if exists
-        shutil.rmtree("../files/documents/")
+        shutil.rmtree("../documents/")
     initDatabase()
     initTables()
     initCourses()
@@ -110,7 +110,7 @@ def initCourses():
 
     mycursor = mydb.cursor()
 
-    coursesList = "../files/courses.list"
+    coursesList = "../support_files/courses.list"
 
     file = open(coursesList, "r")
     text = file.read().replace('\n', '')
