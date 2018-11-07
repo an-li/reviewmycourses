@@ -16,7 +16,8 @@ def main():
 
     # Go to home page after initializing courses database
     print("Content-type: text/html\r\n\r")
-    print("<html><body><meta http-equiv=\"refresh\" content=\"0; URL='../index.html'\" /></body></html>")
+    print("<html><body>All courses initialized successfully!</br>Redirecting to home page... Click <a href=\"../index.html\">here</a> if it does not.")
+    print("<meta http-equiv=\"refresh\" content=\"3; URL='../index.html'\" /></body></html>")
 
 
 def initCourses():

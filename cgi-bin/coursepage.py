@@ -107,6 +107,7 @@ def printCourseInfo(courseInfo, courseFound):
 
         print("<section id=\"documents\">")
         print("<h4>Course documents</h4></br>")
+
         print("<form action=\"upload.php\" method=\"POST\">")
         print("""<div class=\"form-group row\">
                             <label for=\"title\" class=\"col-md-4 col-form-label\">Title: </label>
@@ -117,7 +118,8 @@ def printCourseInfo(courseInfo, courseFound):
         print("""<div class=\"form-group row\">
                             <label for=\"file\" class=\"col-md-4 col-form-label\">File: </label>
                             <div class=\"col-md-8\">
-                                <input type=\"file\" name=\"file\">
+                                <input type=\"file\" accept=\".txt, .rtf, .pdf, .doc, .docx, .ppt, .pptx, .xls, .xlsx, .ods, .odp, .odt\" name=\"file\" /></br>
+                                Accepted extensions: .txt, .rtf, .pdf, .doc, .docx, .ppt, .pptx, .xls, .xlsx, .ods, .odp, .odt
                             </div>
                         </div>""")
         print("<input type=\"hidden\" name=\"course\" value=%s>" %
@@ -141,7 +143,9 @@ def printCourseInfo(courseInfo, courseFound):
         myresults = mycursor.fetchall()
 
         if mycursor.rowcount > 0:
-            print("")  # Update this
+            for result in myresults:
+                print("<p><a href=\"%s\">%s</a> Posted on %s</p></br>" %
+                      (result[4], result[2], result[1]))
         else:
             print("<p>There are currently no documents for this course.</p>")
         mydb.close()
