@@ -162,13 +162,13 @@ def printReviewForm(course):
                 <div class=\"collapse navbar-collapse\" id=\"navbar\">
                 <ul class=\"navbar-nav mr-auto\">
                     <li class=\"nav-item active\">
-                        <a class=\"nav-link\" href=\"../htdocs/index.html\">Home</a>
+                        <a class=\"nav-link\" href=\"../index.html\">Home</a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"courses.py\">Courses</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"../htdocs/about.html\">About</a>
+                        <a class=\"nav-link\" href=\"../about.html\">About</a>
                     </li>
                 </ul>
                 <form class=\"form-inline my-2 my-lg-0\" action=\"search.py\" method=\"GET\">
