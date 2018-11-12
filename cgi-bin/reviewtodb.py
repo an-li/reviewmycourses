@@ -1,4 +1,5 @@
 #!"C:\Program Files\Python37\python.exe"
+# Please edit the above line depending on the operating system and the installed Python version
 
 import cgi
 import json

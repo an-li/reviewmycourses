@@ -1,7 +1,7 @@
 ReviewMyCourses\
 Information and detailed reviews for all McGill courses\
 Web server: XAMPP Apache 7.2.11\
-Python version used: 3.7.0 for Windows 64-bit
+Python version used: 3.7.1 for Windows 64-bit
 
 Made by:
 * Abdullahi Elmi
@@ -15,7 +15,7 @@ Technologies used:
 * Python (Initialize script, course pages, review form, review parser) (1)
 * XAMPP Apache (running on localhost) (2)
 * JSON (format for courses list) (1)
-* Canvas (Home page) (1)
+* JavaScript (Home page) (1)
 * PHP (Search? (maybe Python) and uploader) (1)
 * MySQL (database for courses, documents and reviews) (2)
 
@@ -26,6 +26,7 @@ How to run the site:
 4. Open localhost/cgi-bin/initialization/initall.py in browser to initialize the database if it does not exist or to clear and reinitialize the existing database. If user wants to use the website with existing data, open localhost/index.html in browser instead.
 
 Notes:
+* Please edit the shabang at the top of all Python files depending on the operating system and the installed Python version.
 * Three initialization scripts can be found under localhost/cgi-bin/initialization/
 * initall.py resets the entire database and initializes the courses database with course info from courses.list file.
 * initcourses.py initializes the courses database with course info from courses.list file only. To run every time courses.list has been edited or replaced.

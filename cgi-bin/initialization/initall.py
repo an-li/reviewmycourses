@@ -1,4 +1,5 @@
 #!"C:\Program Files\Python37\python.exe"
+# Please edit the above line depending on the operating system and the installed Python version
 
 # Initialization script for ReviewMyCourses
 # Clears and initializes the database for courses, documents and reviews and removes all uploaded documents for all courses
