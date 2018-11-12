@@ -220,7 +220,7 @@ def printCourseInfo(courseInfo, courseFound):
         else:
             print("<p>There are currently no reviews for this course.</p>")
         mydb2.close()
-    print("<p>Jump to <a href=\"#info\" class=\"btn btn-primary\">Course info</a> <a href=\"#documents\" class=\"btn btn-primary\">Documents</a></p>")
+        print("<p>Jump to <a href=\"#info\" class=\"btn btn-primary\">Course info</a> <a href=\"#documents\" class=\"btn btn-primary\">Documents</a></p>")
     print("</section>")
     print("""</main>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\"
