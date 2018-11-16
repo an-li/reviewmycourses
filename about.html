@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <script type="text/javascript">
+        var i = 0;
+        var ads = []
+        var time = 2150;
+
+        ads[0] = 'Containing All Mcgill Courses.';
+        ads[1] = 'In Depth Review, lecture notes/documents.';
+        ads[2] = 'By Mcgill Students, For Mcgill Students.';
+
+        function changeAds() {
+            document.getElementById("ads").innerHTML = ads[i]
+            if (i < ads.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+
+            setTimeout("changeAds()", time);
+        }
+
+        window.onload = changeAds;
+    </script>
+
+    <style>
+
+        .view {
+                height: 100%;
+            }
+            body, html {
+                height: 100%;
+            }
+            .bg {
+                background-image: url("OEOISO0.jpg");
+                height: 50%;
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: 100%;
+                filter: blur(5px);
+                -webkit-filter: blur(5px) brightness(80%);
+                z-index: -1;
+                left: 0;
+                right: 0;
+            }
+
+            .color {
+                background-color: rgba(0,0,0,0.5);
+                padding-top: 5%;
+                padding-bottom: 5%;
+            }
+
+            .fg-1 {
+                z-index: 2;
+                padding-top: 100px;
+                text-align: center;
+            }
+
+            .fg-2 {
+                z-index: 2;
+                padding-top: 90px;
+            }
+
+            .margin {
+                margin-right: 7px;
+            }
+            .mySlides {
+                display:none;
+                position: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .arrow-left {
+                width: 0; 
+                height: 0; 
+                border: none;
+                background-color: transparent;
+                border-top: 35px solid transparent;
+                border-bottom: 35px solid transparent;   
+                border-right: 30px solid rgb(60,60,60); 
+                position: absolute;
+                margin-top: -260px;
+                left: 0;
+                margin-left: 100px;
+                transition-duration: 0.4s;
+            }
+
+            .arrow-right {
+                width: 0; 
+                height: 0; 
+                border: none;
+                background-color: transparent;
+                border-top: 35px solid transparent;
+                border-bottom: 35px solid transparent;  
+                border-left: 30px solid rgb(60,60,60);
+                position: absolute;
+                margin-top: -260px;
+                right: 0;
+                margin-right: 100px;
+                transition-duration: 0.4s;
+            }
+
+            .arrow-left:hover {
+                border-right: 30px solid rgb(170,170,170);
+            }
+
+            .arrow-right:hover {
+                border-left: 30px solid rgb(170,170,170);
+            }
+
+            button:focus {
+                outline: none;
+            }
+
+
+
+
+
+        </style>
+
+    <script>
+        var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {slideIndex = 1}    
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                     x[i].style.display = "none";  
+                }
+                x[slideIndex-1].style.display = "block";  
+            }
+        </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top h-15">
+        <a class="navbar-brand" href="index.html">ReviewMyCourses</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="courses.py">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="cgi-bin/search.py" method="GET">
+                <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search courses" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="bg"></div>
+    <div class="container fg-1">
+        <div class="display-2 text-white">ABOUT US</div>
+    </div>
+    <div style=" height: 610px">
+        <div class="container fg-2">
+
+            <img class="mySlides" src="IMG_8442.jpg" style="object-fit:cover; width:800px; height:500px; border:7px solid rgb(60,60,60); ">
+            <img class="mySlides" src="IMG_8446.jpg" style="object-fit:cover; width:800px; height:500px; border:7px solid rgb(60,60,60);">
+            <img class="mySlides" src="IMG_8444.jpg" style="object-fit:cover; width:800px; height:500px; border:7px solid rgb(60,60,60);">
+            <button class="arrow-left" onclick="plusDivs(-1)"></button>
+            <button class="arrow-right" onclick="plusDivs(1)"></button>
+            <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
+
+                function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                }
+
+                function showDivs(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    if (n > x.length) {
+                        slideIndex = 1
+                    }
+                    if (n < 1) {
+                        slideIndex = x.length
+                    }
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    x[slideIndex - 1].style.display = "block";
+                }
+            </script>
+        </div>
+    </div>
+    <div class="text-center">
+        <div class="h3 text-black">
+            OUR STORY:
+        </div>
+        <p class="lead">
+            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </p>
+        <p class="lead">
+            Duis mollis, est non commodo luctus.
+        </p>
+    </div>
+</body>
