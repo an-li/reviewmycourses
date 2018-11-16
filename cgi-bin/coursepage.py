@@ -113,13 +113,13 @@ def printCourseInfo(courseInfo, courseFound):
         print("""<div class=\"form-group row\">
                             <label for=\"title\" class=\"col-md-4 col-form-label\">Title: </label>
                             <div class=\"col-md-8\">
-                                <input type=\"text\" class=\"form-control\" name=\"title\">
+                                <input type=\"text\" class=\"form-control\" name=\"title\" required>
                             </div>
                         </div>""")
         print("""<div class=\"form-group row\">
                             <label for=\"file\" class=\"col-md-4 col-form-label\">File: </label>
                             <div class=\"col-md-8\">
-                                <input type=\"file\" accept=\".txt, .rtf, .pdf, .doc, .docx, .ppt, .pptx, .xls, .xlsx, .ods, .odp, .odt\" name=\"file\" /></br>
+                                <input type=\"file\" accept=\".txt, .rtf, .pdf, .doc, .docx, .ppt, .pptx, .xls, .xlsx, .ods, .odp, .odt\" name=\"file\" required></br>
                                 Accepted extensions: .txt, .rtf, .pdf, .doc, .docx, .ppt, .pptx, .xls, .xlsx, .ods, .odp, .odt
                             </div>
                         </div>""")
