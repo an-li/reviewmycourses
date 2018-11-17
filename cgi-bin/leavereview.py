@@ -98,7 +98,7 @@ def printReviewForm(course):
                     white-space: nowrap;
                     vertical-align: baseline;
                     border-radius: 0px;
-                    background-color: rgb(153, 153, 153);
+                    background-color: rgb(40, 167, 69);
                 }
 
                 .range input[type=\"range\"]::-moz-slider-thumb {
@@ -115,7 +115,7 @@ def printReviewForm(course):
                     white-space: nowrap;
                     vertical-align: baseline;
                     border-radius: 0px;
-                    background-color: rgb(153, 153, 153);
+                    background-color: rgb(40, 167, 69);
                     
                 }
 
@@ -196,14 +196,14 @@ def printReviewForm(course):
                         <div class=\"form-group row\">
                             <label for=\"majorMinorId\" class=\"col-md-4 col-form-label\">Your major/minor</label>
                             <div class=\"col-md-8\">
-                                <input type=\"text\" class=\"form-control\" name=\"majorMinor\" id=\"majorMinorId\">
+                                <input type=\"text\" class=\"form-control\" name=\"majorMinor\" id=\"majorMinorId\" required>
                             </div>
                         </div>
 
                         <div class=\"form-group row\">
                             <label for=\"semesterId\" class=\"col-md-4 col-form-label\">Semester and year this course was taken</label>
                             <div class=\"col-md-4\">
-                                <select name=\"semester\" class=\"form-control\" id=\"semesterId\">
+                                <select name=\"semester\" class=\"form-control\" id=\"semesterId\" required>
                                     <option value=\"\">Semester...</option>
                                     <option value=\"Fall\">Fall</option>
                                     <option value=\"Winter\">Winter</option>
@@ -211,7 +211,7 @@ def printReviewForm(course):
                                 </select>
                             </div>
                             <div class=\"col-md-4\">
-                                <select name=\"year\" class=\"form-control\" id=\"yearId\">
+                                <select name=\"year\" class=\"form-control\" id=\"yearId\" required>
                                     <option value=\"\">Year...</option>
                                     <option value=\"2019\">2019</option>
                                     <option value=\"2018\">2018</option>
@@ -240,7 +240,7 @@ def printReviewForm(course):
                         <div class=\"form-group row\">
                             <label for=\"profNameId\" class=\"col-md-4 col-form-label\">Name(s) of professor(s)</label>
                             <div class=\"col-md-8\">
-                                <input type=\"text\" name=\"profName\" class=\"form-control\" id=\"profNameId\">
+                                <input type=\"text\" name=\"profName\" class=\"form-control\" id=\"profNameId\" required>
                             </div>
                         </div>
 
@@ -249,7 +249,7 @@ def printReviewForm(course):
                             <div class=\"col-md-8\">
                                 <div class=\"range\">
                                     <input type=\"range\" name=\"profGoodness\" class=\"form-control\" id=\"profGoodnessId\" value=\"0\"
-                                        min=\"1\" max=\"10\" step=\"0.5\" oninput=\"profGoodnessOutId.value=value\">
+                                        min=\"1\" max=\"10\" step=\"0.5\" oninput=\"profGoodnessOutId.value=value\" required>
                                     <output name=\"profGoodnessOut\" id=\"profGoodnessOutId\">/10</output>
                                 </div>
                             </div>
@@ -280,7 +280,7 @@ def printReviewForm(course):
                             <div class=\"col-md-8\">
                                 <div class=\"range\">
                                     <input type=\"range\" name=\"easiness\" class=\"form-control\" id=\"easinessId\" value=\"0\" min=\"1\"
-                                        max=\"10\" step=\"0.5\" oninput=\"easinessOutId.value=value\">
+                                        max=\"10\" step=\"0.5\" oninput=\"easinessOutId.value=value\" required>
                                     <output name=\"easinessOut\" id=\"easinessOutId\">/10</output>
                                 </div>
                             </div>
@@ -291,7 +291,7 @@ def printReviewForm(course):
                             <div class=\"col-md-8\">
                                 <div class=\"range\">
                                     <input type=\"range\" name=\"usefulness\" class=\"form-control\" id=\"usefulnessId\" value=\"0\" min=\"1\"
-                                        max=\"10\" step=\"0.5\" oninput=\"usefulnessOutId.value=value\">
+                                        max=\"10\" step=\"0.5\" oninput=\"usefulnessOutId.value=value\" required>
                                     <output name=\"usefulnessOut\" id=\"usefulnessOutId\">/10</output>
                                 </div>
                             </div>
@@ -302,7 +302,7 @@ def printReviewForm(course):
                             <div class=\"col-md-8\">
                                 <div class=\"range\">
                                     <input type=\"range\" name=\"coolness\" class=\"form-control\" id=\"coolnessId\" value=\"0\" min=\"1\"
-                                        max=\"10\" step=\"0.5\" oninput=\"coolnessOutId.value=value\">
+                                        max=\"10\" step=\"0.5\" oninput=\"coolnessOutId.value=value\" required>
                                     <output name=\"coolnessOut\" id=\"coolnessOutId\">/10</output>
                                 </div>
                             </div>
@@ -314,7 +314,7 @@ def printReviewForm(course):
                             <div class=\"col-md-8\">
                                 <div class=\"range\">
                                     <input type=\"range\" name=\"workload\" class=\"form-control\" id=\"workloadId\" value=\"0\" min=\"1\"
-                                        max=\"10\" step=\"0.5\" oninput=\"workloadOutId.value=value\">
+                                        max=\"10\" step=\"0.5\" oninput=\"workloadOutId.value=value\" required>
                                     <output name=\"workloadOut\" id=\"workloadOutId\">/10</output>
                                 </div>
                             </div>
@@ -326,7 +326,7 @@ def printReviewForm(course):
                             <div class=\"col-md-8\">
                                 <div class=\"range\">
                                     <input type=\"range\" name=\"lectures\" class=\"form-control\" id=\"lecturesId\" value=\"0\" min=\"0\"
-                                        max=\"10\" step=\"0.5\" oninput=\"lecturesOutId.value=value\">
+                                        max=\"10\" step=\"0.5\" oninput=\"lecturesOutId.value=value\" required>
                                     <output name=\"lecturesOut\" id=\"lecturesOutId\">/10</output>
                                 </div>
                             </div>
@@ -338,7 +338,7 @@ def printReviewForm(course):
                             <div class=\"col-md-8\">
                                 <div class=\"range\">
                                     <input type=\"range\" name=\"prereqs\" class=\"form-control\" id=\"prereqsId\" value=\"0\" min=\"0\"
-                                        max=\"10\" step=\"0.5\" oninput=\"prereqsOutId.value=value\">
+                                        max=\"10\" step=\"0.5\" oninput=\"prereqsOutId.value=value\" required>
                                     <output name=\"prereqsOut\" id=\"prereqsOutId\">/10</output>
                                 </div>
                             </div>
@@ -351,7 +351,7 @@ def printReviewForm(course):
                             <div class=\"col-md-8\">
                                 <div class=\"range\">
                                     <input type=\"range\" name=\"assignments\" class=\"form-control\" id=\"assignmentsId\" value=\"0\"
-                                        min=\"0\" max=\"10\" step=\"0.5\" oninput=\"assignmentsOutId.value=value\">
+                                        min=\"0\" max=\"10\" step=\"0.5\" oninput=\"assignmentsOutId.value=value\" required>
                                     <output name=\"assignmentsOut\" id=\"assignmentsOutId\">/10</output>
                                 </div>
                             </div>
@@ -446,7 +446,7 @@ def printReviewForm(course):
                         <div class=\"form-group row\">
                             <label for=\"prosConsId\" class=\"col-md-4 col-form-label\">Pros and cons about this course</label>
                             <div class=\"col-md-8\">
-                                <textarea class=\"form-control\" rows=\"10\" cols=\"50\" name=\"prosCons\" id=\"prosConsId\"></textarea>
+                                <textarea class=\"form-control\" rows=\"10\" cols=\"50\" name=\"prosCons\" id=\"prosConsId\" required></textarea>
                             </div>
                         </div>
 
@@ -458,7 +458,7 @@ def printReviewForm(course):
                             </div>
                         </div>
                         <p>&#9888; By submitting, you agree that this review does not contain ANY sensitive or personal information, such as passwords, student ID numbers, solutions to material (past, current or upcoming) or email addresses. &#9888;</p>
-                        <center><input class=\"form-control\" type=\"submit\" value=\"I agree, submit review\"></center>
+                        <center><input class=\"btn btn-success btn-lg btn-block\" type=\"submit\" value=\"I agree, submit review\"></center>
                     </form>
                 </section>
             </main>

@@ -102,7 +102,7 @@ def printCourseInfo(courseInfo, courseFound):
         print("<p><b>Term(s): </b>", courseInfo[5], "</p></br>")
         print("<p><b>Link to McGill eCalendar: </b><a href=\"%s\">%s</a></p></br>" %
               (courseInfo[6], courseInfo[6]))
-        print("<p>Jump to <a href=\"#documents\" class=\"btn btn-primary\">Documents</a> <a href=\"#reviews\" class=\"btn btn-primary\">Reviews</a></p>")
+        print("<p>Jump to <a href=\"#documents\" class=\"btn btn-success\">Documents</a> <a href=\"#reviews\" class=\"btn btn-success\">Reviews</a></p>")
     print("</section>")
     if courseFound != 0:
 
@@ -126,7 +126,7 @@ def printCourseInfo(courseInfo, courseFound):
         print("<input type=\"hidden\" name=\"course\" value=%s>" %
               (courseInfo[7]))
         print("</br><p>&#9888; By submitting, you agree that these documents cannot be used unfairly and do not contain solutions to upcoming material. &#9888;</p>")
-        print("<input type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" value=\"I agree, upload document\" name=\"upload\">")
+        print("<input type=\"submit\" class=\"btn btn-success btn-lg btn-block\" value=\"I agree, upload document\" name=\"upload\">")
         print("</form></br>")
 
         mydb = mysql.connector.connect(
@@ -151,11 +151,11 @@ def printCourseInfo(courseInfo, courseFound):
             print("<p>There are currently no documents for this course.</p>")
         mydb.close()
 
-        print("<p>Jump to <a href=\"#info\" class=\"btn btn-primary\">Course info</a> <a href=\"#reviews\" class=\"btn btn-primary\">Reviews</a></p>")
+        print("<p>Jump to <a href=\"#info\" class=\"btn btn-success\">Course info</a> <a href=\"#reviews\" class=\"btn btn-success\">Reviews</a></p>")
         print("</section>")
         print("<section id=\"reviews\">")
         print("<h4>Course reviews</h4></br>")
-        print("<a class=\"btn btn-primary btn-lg btn-block\" href=\"leavereview.py?course=%s\">Leave a review</a></br>" %
+        print("<a class=\"btn btn-success btn-lg btn-block\" href=\"leavereview.py?course=%s\">Leave a review</a></br>" %
               (courseInfo[7]))
 
         mydb2 = mysql.connector.connect(
@@ -220,7 +220,7 @@ def printCourseInfo(courseInfo, courseFound):
         else:
             print("<p>There are currently no reviews for this course.</p>")
         mydb2.close()
-        print("<p>Jump to <a href=\"#info\" class=\"btn btn-primary\">Course info</a> <a href=\"#documents\" class=\"btn btn-primary\">Documents</a></p>")
+        print("<p>Jump to <a href=\"#info\" class=\"btn btn-success\">Course info</a> <a href=\"#documents\" class=\"btn btn-success\">Documents</a></p>")
     print("</section>")
     print("""</main>
         <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\"

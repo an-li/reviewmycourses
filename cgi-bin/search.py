@@ -32,8 +32,8 @@ def search(query):
     for x in queryList:
         argsString = argsString + x + "%"
 
-    sql = 'SELECT * FROM courses WHERE upper(title) LIKE %s'
-    args = [argsString]
+    sql = 'SELECT * FROM courses WHERE upper(title) LIKE %s OR upper(course) LIKE %s'
+    args = [argsString, argsString]
     mycursor.execute(sql, args, multi=True)
 
     myresult = mycursor.fetchall()
@@ -43,39 +43,47 @@ def search(query):
     for entry in myresult:
         if len(queryList) == 1:
             if queryList[0] == entry[0].lower():
+                course = entry[0]
                 title = entry[1]
-                courseList.append([title])
+                courseList.append([course, title])
                 return courseList
         elif len(queryList) == 2:
             if "".join(queryList) in entry[0].lower():
+                course = entry[0]
                 title = entry[1]
-                courseList.append([title])
+                courseList.append([course, title])
         elif len(queryList) == 3:
             if queryList[0] in entry[0].lower() and queryList[1] in entry[1].lower():
+                course = entry[0]
                 title = entry[1]
-                courseList.append([title])
-            elif queryList[0] == entry[0].lower() or queryList[1] == entry[0].lower():
+                courseList.append([course, title])
+            elif queryList[0] in entry[0].lower() or queryList[1] in entry[0].lower():
+                course = entry[0]
                 title = entry[1]
-                courseList.append([title])
+                courseList.append([course, title])
 
     if len(queryList) == 1:
         for entry in myresult:
             if queryList[0] in entry[0].lower():
+                course = entry[0]
                 title = entry[1]
-                courseList.append([title])
+                courseList.append([course, title])
         for entry in myresult:
             if queryList[0] not in entry[0].lower() and queryList[0] in entry[1].lower():
+                course = entry[0]
                 title = entry[1]
-                courseList.append([title])
+                courseList.append([course, title])
 
     if len(queryList) == 2:
         for entry in myresult:
             if queryList[0] in entry[0].lower() and queryList[1] in entry[1].lower() and queryList[1] not in entry[0].lower():
+                course = entry[0]
                 title = entry[1]
-                courseList.append([title])
-            elif queryList[0] == entry[0].lower() or queryList[1] == entry[0].lower():
+                courseList.append([course, title])
+            elif queryList[0] in entry[0].lower() or queryList[1] in entry[0].lower():
+                course = entry[0]
                 title = entry[1]
-                courseList.append([title])
+                courseList.append([course, title])
 
     return courseList
 
