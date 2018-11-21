@@ -12,11 +12,12 @@ Technologies used:
 * HTML5/CSS (2)
 * Bootstrap (for theming) (1)
 * CGI (1)
-* Python (Initialize script, course pages, review form, review parser) (1)
+* Python (Initialize script, course pages, search engine review form, review parser) (1)
 * XAMPP Apache (running on localhost) (2)
 * JSON (format for courses list) (1)
 * JavaScript (Home page) (1)
-* PHP (Search? (maybe Python) and uploader) (1)
+* PHP (uploader) (1)
+* SLIM (uploader) (1)
 * MySQL (database for courses, documents and reviews) (2)
 
 How to run the site:
