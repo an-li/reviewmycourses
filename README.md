@@ -15,14 +15,14 @@ Technologies used:
 * Python (Initialize script, course pages, search engine, review form, review parser) (1)
 * XAMPP Apache (running on localhost) (2)
 * JSON (format for courses list) (1)
-* JavaScript (Home page) (1)
+* JavaScript (Home page and paginator) (1)
 * PHP (Uploader) (1)
 * MySQL (database for courses, documents and reviews) (2)
 
 How to run the site:
 1. Copy and paste all contents of the cgi-bin folder to the cgi-bin folder of xampp
 2. Copy and paste the support_files folder to the xampp folder
-3. Copy and paste all html files in the root directory to the htdocs folder of xampp
+3. Copy and paste all html, js and php files in the root directory to the htdocs folder of xampp
 4. Open localhost/cgi-bin/initialization/initall.py in browser to initialize the database if it does not exist or to clear and reinitialize the existing database. If user wants to use the website with existing data, open localhost/index.html in browser instead.
 
 Notes:

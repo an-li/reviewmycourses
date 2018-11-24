@@ -62,7 +62,15 @@ def printCourseInfo(courseInfo, courseFound):
             h1, h2, h3, h4, h5, h6 {
                 text-align: center;
             }
+            .easyPaginateNav a {padding:5px;}
+            .easyPaginateNav a.current {
+                font-weight: bold;
+                text-decoration: underline;
+            }
         </style>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="../jquery-easyPaginate.js"></script>
+        
     </head>""")
     print("<body>")
     print("""<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">
@@ -109,7 +117,7 @@ def printCourseInfo(courseInfo, courseFound):
         print("<section id=\"documents\">")
         print("<h4>Course documents</h4></br>")
 
-        print("<form action=\"upload.php\" method=\"POST\">")
+        print("<form action=\"../upload.php\" method=\"POST\" enctype=\"multipart/form-data\">")
         print("""<div class=\"form-group row\">
                             <label for=\"title\" class=\"col-md-4 col-form-label\">Title: </label>
                             <div class=\"col-md-8\">
@@ -144,9 +152,11 @@ def printCourseInfo(courseInfo, courseFound):
         myresults = mycursor.fetchall()
 
         if mycursor.rowcount > 0:
+            print("<div id=\"paginateDocuments\">")
             for result in myresults:
                 print("<p><a href=\"%s\">%s</a> Posted on %s</p></br>" %
                       (result[4], result[2], result[1]))
+            print("</div></br>")
         else:
             print("<p>There are currently no documents for this course.</p>")
         mydb.close()
@@ -172,7 +182,9 @@ def printCourseInfo(courseInfo, courseFound):
         myresults2 = mycursor2.fetchall()
 
         if mycursor2.rowcount > 0:
+            print("<div id=\"paginateReviews\">")
             for result in myresults2:
+                print("<dd>")
                 print("<p>Review posted on %s</p>" % result[1])
                 print("<p><b>Review by</b> %s</p>" % (result[3]))
                 print("<p><b>Your major/minor</b>: %s</p>" % (result[4]))
@@ -217,6 +229,8 @@ def printCourseInfo(courseInfo, courseFound):
                 print(
                     "<p><b>Other comments (e.g.: Suggestions for future course takers? Follow up courses to take?)</b>: %s</p>" % (result[25]))
                 print("<p></br></p>")
+                print("</dd>")
+            print("</div></br>")
         else:
             print("<p>There are currently no reviews for this course.</p>")
         mydb2.close()
@@ -227,6 +241,17 @@ def printCourseInfo(courseInfo, courseFound):
             crossorigin=\"anonymous\"></script>
         <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\"
             crossorigin=\"anonymous\"></script>
+        <script>
+            $('#paginateDocuments').easyPaginate({
+                paginateElement: 'p',
+                elementsPerPage: 25
+            });
+
+            $('#paginateReviews').easyPaginate({
+                paginateElement: 'dd',
+                elementsPerPage: 10
+            });
+        </script>
     </body>
 
     </html>""")
