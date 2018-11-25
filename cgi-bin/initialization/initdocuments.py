@@ -50,8 +50,8 @@ def initDocuments():
             for f in os.listdir(currentDir):
                 filePath = currentDir + "/" + os.path.basename(f)
                 command = "INSERT INTO documents (tstamp, title, course, url) VALUES (%s, %s, %s, %s)"
-                info = (datetime.datetime.fromtimestamp(os.path.getmtime(filePath)).strftime('%Y/%m/%d %H:%M:%S'), os.path.basename(
-                    f), os.path.basename(dir), ("../documents/" + os.path.basename(dir) + "/" + os.path.basename(f)))
+                info = (datetime.datetime.fromtimestamp(os.path.getmtime(filePath)).strftime('%Y/%m/%d %H:%M:%S'), os.path.splitext(
+                    os.path.basename(f))[0], os.path.basename(dir), ("../documents/" + os.path.basename(dir) + "/" + os.path.basename(f)))
                 mycursor.execute(command, info)
         mydb.commit()
         return "All documents initialized successfully!"

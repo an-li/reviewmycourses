@@ -117,7 +117,8 @@ def printCourseInfo(courseInfo, courseFound):
         print("<section id=\"documents\">")
         print("<h4>Course documents</h4></br>")
 
-        print("<form action=\"../upload.php\" method=\"POST\" enctype=\"multipart/form-data\">")
+        print(
+            "<form action=\"../upload.php\" method=\"POST\" enctype=\"multipart/form-data\">")
         print("""<div class=\"form-group row\">
                             <label for=\"title\" class=\"col-md-4 col-form-label\">Title: </label>
                             <div class=\"col-md-8\">
@@ -125,7 +126,7 @@ def printCourseInfo(courseInfo, courseFound):
                             </div>
                         </div>""")
         print("""<div class=\"form-group row\">
-                            <label for=\"file\" class=\"col-md-4 col-form-label\">File: </label>
+                            <label for=\"file\" class=\"col-md-4 col-form-label\">File: (Max size: 10MB)</label>
                             <div class=\"col-md-8\">
                                 <input type=\"file\" accept=\".txt, .rtf, .pdf, .doc, .docx, .ppt, .pptx, .xls, .xlsx, .ods, .odp, .odt\" name=\"file\" required></br>
                                 Accepted extensions: .txt, .rtf, .pdf, .doc, .docx, .ppt, .pptx, .xls, .xlsx, .ods, .odp, .odt
@@ -145,16 +146,15 @@ def printCourseInfo(courseInfo, courseFound):
         )
         mycursor = mydb.cursor()
 
-        # Please update this section
         mycursor.execute(
-            "SELECT * FROM documents WHERE course = %s ORDER BY documentid DESC", (courseInfo[7],), multi=True)
+            "SELECT * FROM documents WHERE course = %s ORDER BY tstamp DESC", (courseInfo[7],), multi=True)
 
         myresults = mycursor.fetchall()
 
         if mycursor.rowcount > 0:
             print("<div id=\"paginateDocuments\">")
             for result in myresults:
-                print("<p><a href=\"%s\">%s</a> Posted on %s</p></br>" %
+                print("<p><a href=\"%s\">%s</a> Posted on %s</p>" %
                       (result[4], result[2], result[1]))
             print("</div></br>")
         else:
