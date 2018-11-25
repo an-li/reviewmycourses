@@ -98,7 +98,7 @@ def main():
     mydb.commit()
 
     print("Content-type: text/html\r\n\r")
-    print("<html><body><meta http-equiv=\"refresh\" content=\"0; URL='coursepage.py?course=%s'\" /></body></html>" % (course))
+    print("<html><body><meta http-equiv=\"refresh\" content=\"0; URL='coursepage.cgi?course=%s'\" /></body></html>" % (course))
 
 
 main()

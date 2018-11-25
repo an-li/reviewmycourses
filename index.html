@@ -9,10 +9,10 @@
     <script type="text/javascript">
         var i = 0;
         var ads = []
-        var time = 2180;
+        var time = 2000;
 
         ads[0] = 'All McGill Courses.';
-        ads[1] = 'In Depth Review and Comments.';
+        ads[1] = 'In-Depth Reviews and Comments.';
         ads[2] = 'Lecture Notes and Documents.';
         ads[3] = 'By McGill Students, for McGill Students.';
 
@@ -91,7 +91,7 @@
                     <a class="nav-link" href="about.html">About</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" action="cgi-bin/search.py" method="GET">
+            <form class="form-inline my-2 my-lg-0" action="cgi-bin/search.cgi" method="GET">
                 <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search courses" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
@@ -104,7 +104,7 @@
     <div class="container fg">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-                <form class="card card-sm text-center color" action="cgi-bin/search.py" method="GET">
+                <form class="card card-sm text-center color" action="cgi-bin/search.cgi" method="GET">
                     <div class="display-3 text-white">
                         ReviewMyCourses
                     </div>

@@ -17,7 +17,7 @@ def main():
     if course != "Error: Course not found!":
         printReviewForm(course)
     else:
-        print("<meta http-equiv=\"refresh\" content=\"0; URL='coursepage.py?course=%s'\" />" % (courseName))
+        print("<meta http-equiv=\"refresh\" content=\"0; URL='coursepage.cgi?course=%s'\" />" % (courseName))
 
 
 def findCourse(courseName):
@@ -183,7 +183,7 @@ def printReviewForm(course):
                 <section name=\"review\">""")
     print("""<h3>Please leave a review for course %s:</h3>""" % (course))
     print("""<br>
-                    <form action=\"reviewtodb.py\" method=\"POST\">
+                    <form action=\"reviewtodb.cgi\" method=\"POST\">
                     <p>&#9888; <b>NEVER</b> submit sensitive or personal information, such as passwords, student ID numbers, solutions to material (past, current or upcoming) or email addresses in reviews. &#9888;</p>
                     <input type=\"hidden\" name=\"course\" value=%s>""" % (course))
     print("""<div class=\"form-group row\">

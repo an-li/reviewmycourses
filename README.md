@@ -23,10 +23,10 @@ How to run the site:
 1. Copy and paste all contents of the cgi-bin folder to the cgi-bin folder of xampp
 2. Copy and paste the support_files folder to the xampp folder
 3. Copy and paste all html, js and php files in the root directory to the htdocs folder of xampp
-4. Open localhost/cgi-bin/initialization/initall.py in browser to initialize the database if it does not exist or to clear and reinitialize the existing database. If user wants to use the website with existing data, open localhost/index.html in browser instead.
+4. Open localhost/cgi-bin/initialization/initall.cgi in browser to initialize the database if it does not exist or to clear and reinitialize the existing database. If user wants to use the website with existing data, open localhost/index.html in browser instead.
 
 Notes:
-* Please edit the shabang at the top of all Python files depending on the operating system and the installed Python version.
+* Please edit the shabang at the top of all .cgi files written in Python depending on the operating system and the installed Python version.
 * Please change the value of upload_max_filesize= in php.ini to at least 10M to allow files of up to 10MB to be uploaded
 * Three initialization scripts can be found under localhost/cgi-bin/initialization/
 * initall.py resets the entire database and initializes the courses database with course info from courses.list file.

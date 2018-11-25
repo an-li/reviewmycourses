@@ -92,7 +92,7 @@ def printCourseInfo(courseInfo, courseFound):
                         <a class=\"nav-link\" href=\"../about.html\">About</a>
                     </li>
                 </ul>
-                <form class=\"form-inline my-2 my-lg-0\" action=\"search.py\" method=\"GET\">
+                <form class=\"form-inline my-2 my-lg-0\" action=\"search.cgi\" method=\"GET\">
                     <input class=\"form-control mr-sm-2\" type=\"text\" name=\"query\" placeholder=\"Search courses\" aria-label=\"Search\">
                     <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
                 </form>
@@ -165,7 +165,7 @@ def printCourseInfo(courseInfo, courseFound):
         print("</section>")
         print("<section id=\"reviews\">")
         print("<h4>Course reviews</h4></br>")
-        print("<a class=\"btn btn-success btn-lg btn-block\" href=\"leavereview.py?course=%s\">Leave a review</a></br>" %
+        print("<a class=\"btn btn-success btn-lg btn-block\" href=\"leavereview.cgi?course=%s\">Leave a review</a></br>" %
               (courseInfo[7]))
 
         mydb2 = mysql.connector.connect(

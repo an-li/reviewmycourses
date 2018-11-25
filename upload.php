@@ -78,5 +78,5 @@ if ($uploadOk == 0) {
         echo "Not uploaded because of error #".$_FILES["file"]["error"];
     }
 }
-echo "<script>window.location = 'http://localhost/cgi-bin/coursepage.py?course=$course'</script>";
+echo "<script>window.location = 'http://localhost/cgi-bin/coursepage.cgi?course=$course'</script>";
 ?>
