@@ -28,6 +28,7 @@ How to run the site:
 Notes:
 * Please edit the shabang at the top of all .cgi files written in Python depending on the operating system and the installed Python version.
 * Please change the value of upload_max_filesize= in php.ini to at least 10M to allow files of up to 10MB to be uploaded
+* The value of date.timezone= must reflect the server's current time zone.
 * Three initialization scripts can be found under localhost/cgi-bin/initialization/
 * initall.py resets the entire database and initializes the courses database with course info from courses.list file.
 * initcourses.py initializes the courses database with course info from courses.list file only. To run every time courses.list has been edited or replaced.
