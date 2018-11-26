@@ -8,21 +8,24 @@ Made by:
 * An Li
 * Ngoc Tuan Tran
 
-Technologies used:
-* HTML5/CSS (2)
-* Bootstrap (for theming) (1)
-* CGI (1)
-* Python (Initialize script, course pages, search engine, review form, review parser) (1)
-* XAMPP Apache (running on localhost) (2)
-* JSON (format for courses list) (1)
-* JavaScript (Home page and paginator) (1)
-* PHP (Uploader) (1)
-* MySQL (database for courses, documents and reviews) (2)
+Server: XAMPP Apache (running on localhost)
+
+Technologies used (Front-end):
+* HTML5/CSS
+* Bootstrap (For theming)
+* JavaScript (Home page, about page and paginator)
+
+Technologies used (Back-end):
+* CGI (Search, upload and review form processing)
+* Python (Initialize script, course pages, search engine, review form, review parser)
+* JSON (format for courses list)
+* PHP and Slim (Uploader)
+* MySQL (Database for courses, documents and reviews)
 
 How to run the site:
 1. Copy and paste all contents of the cgi-bin folder to the cgi-bin folder of xampp
 2. Copy and paste the support_files folder to the xampp folder
-3. Copy and paste all html, js and php files in the root directory to the htdocs folder of xampp
+3. Copy and paste all html, js, php files and images directory in the root directory to the htdocs folder of xampp
 4. Open localhost/cgi-bin/initialization/initall.cgi in browser to initialize the database if it does not exist or to clear and reinitialize the existing database. If user wants to use the website with existing data, open localhost/index.html in browser instead.
 
 Notes:

@@ -62,7 +62,10 @@ def printCourseInfo(courseInfo, courseFound):
             h1, h2, h3, h4, h5, h6 {
                 text-align: center;
             }
-            .easyPaginateNav a {padding:5px;}
+            .easyPaginateNav a {
+                padding:5px;
+                color: rgb(40, 167, 69);
+            }
             .easyPaginateNav a.current {
                 font-weight: bold;
                 text-decoration: underline;
@@ -86,7 +89,7 @@ def printCourseInfo(courseInfo, courseFound):
                         <a class=\"nav-link\" href=\"../index.html\">Home</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"courses.py\">Courses</a>
+                        <a class=\"nav-link\" href=\"../courses.html\">Courses</a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"../about.html\">About</a>

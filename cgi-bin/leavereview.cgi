@@ -166,7 +166,7 @@ def printReviewForm(course):
                         <a class=\"nav-link\" href=\"../index.html\">Home</a>
                     </li>
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"courses.py\">Courses</a>
+                        <a class=\"nav-link\" href=\"../courses.html\">Courses</a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"../about.html\">About</a>

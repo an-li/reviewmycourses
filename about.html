@@ -5,145 +5,135 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-    <script type="text/javascript">
-        var i = 0;
-        var ads = []
-        var time = 2150;
-
-        ads[0] = 'Containing All Mcgill Courses.';
-        ads[1] = 'In Depth Review, lecture notes/documents.';
-        ads[2] = 'By Mcgill Students, For Mcgill Students.';
-
-        function changeAds() {
-            document.getElementById("ads").innerHTML = ads[i]
-            if (i < ads.length - 1) {
-                i++;
-            } else {
-                i = 0;
-            }
-
-            setTimeout("changeAds()", time);
-        }
-
-        window.onload = changeAds;
-    </script>
+    <title>About us</title>
 
     <style>
-
         .view {
-                height: 100%;
-            }
-            body, html {
-                height: 100%;
-            }
-            .bg {
-                background-image: url("OEOISO0.jpg");
-                height: 50%;
-                position: absolute;
-                background-repeat: no-repeat;
-                background-size: 100%;
-                filter: blur(5px);
-                -webkit-filter: blur(5px) brightness(80%);
-                z-index: -1;
-                left: 0;
-                right: 0;
-            }
+        height: 100%;
+      }
+      body, html {
+        height: 100%;
+      }
+      .bg {
+        background-image: url("images/OEOISO0.jpg");
+        height: 50%;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        filter: blur(5px);
+        -webkit-filter: blur(5px) brightness(80%);
+        z-index: -1;
+        left: 0;
+        right: 0;
+      }
 
-            .color {
-                background-color: rgba(0,0,0,0.5);
-                padding-top: 5%;
-                padding-bottom: 5%;
-            }
+      .color {
+        background-color: rgba(0,0,0,0.5);
+        padding-top: 5%;
+        padding-bottom: 5%;
+      }
 
-            .fg-1 {
-                z-index: 2;
-                padding-top: 100px;
-                text-align: center;
-            }
+      .fg-1 {
+        z-index: 2;
+        padding-top: 100px;
+        text-align: center;
+      }
 
-            .fg-2 {
-                z-index: 2;
-                padding-top: 90px;
-            }
+      .fg-2 {
+        z-index: 2;
+        padding-top: 90px;
+      }
 
-            .margin {
-                margin-right: 7px;
-            }
-            .mySlides {
-                display:none;
-                position: center;
-                margin-left: auto;
-                margin-right: auto;
-            }
+      .margin {
+        margin-right: 10px;
+      }
+      .mySlides {
+        display:none;
+        position: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-            .arrow-left {
-                width: 0; 
-                height: 0; 
-                border: none;
-                background-color: transparent;
-                border-top: 35px solid transparent;
-                border-bottom: 35px solid transparent;   
-                border-right: 30px solid rgb(60,60,60); 
-                position: absolute;
-                margin-top: -260px;
-                left: 0;
-                margin-left: 100px;
-                transition-duration: 0.4s;
-            }
+      .arrow-left {
+        width: 0; 
+        height: 0; 
+        border: none;
+        background-color: transparent;
+        border-top: 35px solid transparent;
+        border-bottom: 35px solid transparent;   
+        border-right: 30px solid rgb(60,60,60); 
+        position: absolute;
+        margin-top: -260px;
+        left: 0;
+        margin-left: 20%;
+        transition-duration: 0.6s;
+      }
 
-            .arrow-right {
-                width: 0; 
-                height: 0; 
-                border: none;
-                background-color: transparent;
-                border-top: 35px solid transparent;
-                border-bottom: 35px solid transparent;  
-                border-left: 30px solid rgb(60,60,60);
-                position: absolute;
-                margin-top: -260px;
-                right: 0;
-                margin-right: 100px;
-                transition-duration: 0.4s;
-            }
+      .arrow-right {
+        width: 0; 
+        height: 0; 
+        border: none;
+        background-color: transparent;
+        border-top: 35px solid transparent;
+        border-bottom: 35px solid transparent;  
+        border-left: 30px solid rgb(60,60,60);
+        position: absolute;
+        margin-top: -260px;
+        right: 0;
+        margin-right: 20%;
+        transition-duration: 0.6s;
+      }
 
-            .arrow-left:hover {
-                border-right: 30px solid rgb(170,170,170);
-            }
+      .arrow-left:hover {
+        border-right: 30px solid rgb(170,170,170);
+      }
 
-            .arrow-right:hover {
-                border-left: 30px solid rgb(170,170,170);
-            }
+      .arrow-right:hover {
+        border-left: 30px solid rgb(170,170,170);
+      }
 
-            button:focus {
-                outline: none;
-            }
+      button:focus {
+        outline: none;
+      }
 
+      .team {
+        padding-right: 20%; 
+        padding-left: 20%;
+        padding-bottom: 5%;
+      }
 
+      hr { 
+        display: block;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        margin-left: 20%;
+        margin-right: 20%;
+        border-style: solid;
+        border-width: 1px;
+        border-color: green;
+    } 
 
-
-
-        </style>
+    </style>
 
     <script>
         var slideIndex = 1;
-            showDivs(slideIndex);
+      showDivs(slideIndex);
 
-            function plusDivs(n) {
-                showDivs(slideIndex += n);
-            }
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
 
-            function showDivs(n) {
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                if (n > x.length) {slideIndex = 1}    
-                if (n < 1) {slideIndex = x.length}
-                for (i = 0; i < x.length; i++) {
-                     x[i].style.display = "none";  
-                }
-                x[slideIndex-1].style.display = "block";  
-            }
-        </script>
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "block";  
+      }
+    </script>
 </head>
 
 <body>
@@ -159,7 +149,7 @@
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="courses.py">Courses</a>
+                    <a class="nav-link" href="courses.html">Courses</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
@@ -179,9 +169,9 @@
     <div style=" height: 610px">
         <div class="container fg-2">
 
-            <img class="mySlides" src="IMG_8442.jpg" style="object-fit:cover; width:800px; height:500px; border:7px solid rgb(60,60,60); ">
-            <img class="mySlides" src="IMG_8446.jpg" style="object-fit:cover; width:800px; height:500px; border:7px solid rgb(60,60,60);">
-            <img class="mySlides" src="IMG_8444.jpg" style="object-fit:cover; width:800px; height:500px; border:7px solid rgb(60,60,60);">
+            <img class="mySlides" src="images/IMG_8442.jpg" style="object-fit:cover; width:680px; height:450px; border:7px solid rgb(60,60,60); ">
+            <img class="mySlides" src="images/IMG_8446.jpg" style="object-fit:cover; width:680px; height:450px; border:7px solid rgb(60,60,60);">
+            <img class="mySlides" src="images/IMG_8444.jpg" style="object-fit:cover; width:680px; height:450px; border:7px solid rgb(60,60,60);">
             <button class="arrow-left" onclick="plusDivs(-1)"></button>
             <button class="arrow-right" onclick="plusDivs(1)"></button>
             <script>
@@ -215,10 +205,62 @@
         </div>
         <p class="lead">
             Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-            <!-- An Li is a third year McGill University student majoring in Computer Science. He opened his first site with McGill course resources in April 2017 after learning HTML and seeing two other McGill students uploading their course resources to a public website or GitHub. This was his inspiration into creating the website ReviewMyCourses. -->
         </p>
         <p class="lead">
             Duis mollis, est non commodo luctus.
         </p>
+        </br>
     </div>
+    <hr>
+    </br>
+    <div>
+        <div class="h3 text-center text-black">
+            OUR TEAM:
+        </div>
+        </br>
+        <div class="media team">
+            <img class="mr-3" src="images/IMG_8442.jpg" style="object-fit:cover; width:80px; height:80px;">
+            <div class="media-body">
+                <h4 class="mt-0" style="border-left: 4px solid green; padding-left: 7px;">An Li</h5>
+                    An Li is a third year McGill University student majoring in Computer Science. He opened his first
+                    site with
+                    McGill course resources in April 2017 after learning HTML and seeing two other McGill students
+                    uploading
+                    their course resources to a public website or GitHub. This was his inspiration into creating the
+                    website
+                    ReviewMyCourses.
+            </div>
+        </div>
+        <div class="media team">
+            <div class="media-body">
+                <h4 class="mt-0 mb-1 text-right" style="border-right: 4px solid green; padding-right: 7px;">Abdullahi
+                    Elmi</h5>
+                    <div class="text-right">
+                        Abdullahi Elmi is a third year honors Computer Science student who first started coding
+                        websites for a school journal he was working on. His major interests regarding technology
+                        involves robotics, artificial intelligence, and games programming.
+                    </div>
+            </div>
+            <img class="ml-3" src="images/IMG_8442.jpg" style="object-fit:cover; width:80px; height:80px;">
+        </div>
+        <div class="media team">
+            <img class="mr-3" src="images/IMG_8442.jpg" style="object-fit:cover; width:80px; height:80px;">
+            <div class="media-body">
+                <h4 class="mt-0" style="border-left: 4px solid green; padding-left: 7px;">Tu Tran</h5>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+                    purus odio,
+                    vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+                    fringilla. Donec
+                    lacinia congue felis in faucibus.
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous">
+    </script>
 </body>
+
+</html>
