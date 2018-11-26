@@ -157,7 +157,7 @@ def printCourseInfo(courseInfo, courseFound):
         if mycursor.rowcount > 0:
             print("<div id=\"paginateDocuments\">")
             for result in myresults:
-                print("<p><a href=\"%s\">%s</a> Posted on %s</p>" %
+                print("<p><a href=\"%s\">%s</a> Last modified on %s</p>" %
                       (result[4], result[2], result[1]))
             print("</div></br>")
         else:
