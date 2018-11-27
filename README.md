@@ -6,7 +6,7 @@ Python version used: 3.7.1 for Windows 64-bit
 Made by:
 * Abdullahi Elmi
 * An Li
-* Ngoc Tuan Tran
+* Tu Tran
 
 Server: XAMPP Apache (running on localhost)
 
@@ -36,3 +36,7 @@ Notes:
 * initall.py resets the entire database and initializes the courses database with course info from courses.list file.
 * initcourses.py initializes the courses database with course info from courses.list file only. To run every time courses.list has been edited or replaced.
 * initdocuments.py initializes the database for documents. To run every time the contents of the documents folder have been edited on the server without using the upload form on the course pages.
+
+Known issues:
+* Entering non-ASCII characters in search box will cause the page to display nothing.
+* Slides on the About page will not display properly on mobile

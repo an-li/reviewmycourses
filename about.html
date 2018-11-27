@@ -3,11 +3,8 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <title>About us</title>
 
     <style>
@@ -17,6 +14,18 @@
       body, html {
         height: 100%;
       }
+
+      .mySlides {
+        display: none;
+        width: auto;
+        height: auto;
+        position: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: auto;
+        padding-right: auto;
+      }
+
       .bg {
         background-image: url("images/OEOISO0.jpg");
         height: 50%;
@@ -49,12 +58,6 @@
 
       .margin {
         margin-right: 10px;
-      }
-      .mySlides {
-        display:none;
-        position: center;
-        margin-left: auto;
-        margin-right: auto;
       }
 
       .arrow-left {
@@ -97,6 +100,11 @@
 
       button:focus {
         outline: none;
+      }
+
+      .lead {
+        padding-right: 20%; 
+        padding-left: 20%;
       }
 
       .team {
@@ -169,12 +177,12 @@
     <div class="container fg-1">
         <div class="display-2 text-white">ABOUT US</div>
     </div>
-    <div style=" height: 610px">
+    <div style="height: 640px">
         <div class="container fg-2">
 
-            <img class="mySlides" src="images/IMG_8442.jpg" style="object-fit:cover; width:680px; height:450px; border:7px solid rgb(60,60,60); ">
-            <img class="mySlides" src="images/IMG_8446.jpg" style="object-fit:cover; width:680px; height:450px; border:7px solid rgb(60,60,60);">
-            <img class="mySlides" src="images/IMG_8444.jpg" style="object-fit:cover; width:680px; height:450px; border:7px solid rgb(60,60,60);">
+            <img class="mySlides" src="images/about1.png" style="object-fit:cover; width:auto; height:480px; border:7px solid rgb(60,60,60); ">
+            <img class="mySlides" src="images/about2.png" style="object-fit:cover; width:auto; height:480px; border:7px solid rgb(60,60,60);">
+            <img class="mySlides" src="images/about3.png" style="object-fit:cover; width:auto; height:480px; border:7px solid rgb(60,60,60);">
             <button class="arrow-left" onclick="plusDivs(-1)"></button>
             <button class="arrow-right" onclick="plusDivs(1)"></button>
             <script>
@@ -188,15 +196,18 @@
                 function showDivs(n) {
                     var i;
                     var x = document.getElementsByClassName("mySlides");
+
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+
                     if (n > x.length) {
                         slideIndex = 1
                     }
                     if (n < 1) {
                         slideIndex = x.length
                     }
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";
-                    }
+
                     x[slideIndex - 1].style.display = "block";
                 }
             </script>
@@ -207,10 +218,10 @@
             OUR STORY:
         </div>
         <p class="lead">
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-        </p>
-        <p class="lead">
-            Duis mollis, est non commodo luctus.
+            We are a group of students who are trying to provide a better environment for students like us to find info
+            about courses more easily! We are dedicated to provide a platform to allow everyone to share their
+            documents and reviews on all courses offered in McGill University, in hope that such information will be
+            useful for future students.
         </p>
         </br>
     </div>
@@ -222,7 +233,7 @@
         </div>
         </br>
         <div class="media team">
-            <img class="mr-3" src="images/IMG_8442.jpg" style="object-fit:cover; width:80px; height:80px;">
+            <img class="mr-3" src="images/thumb1.jpg" style="object-fit:cover; width:80px; height:80px;">
             <div class="media-body">
                 <h4 class="mt-0" style="border-left: 4px solid green; padding-left: 7px;">An Li</h5>
                     An Li is a third year McGill University student majoring in Computer Science. He opened his first
@@ -244,10 +255,10 @@
                         involves robotics, artificial intelligence, and games programming.
                     </div>
             </div>
-            <img class="ml-3" src="images/IMG_8442.jpg" style="object-fit:cover; width:80px; height:80px;">
+            <img class="ml-3" src="images/thumb2.jpg" style="object-fit:cover; width:80px; height:80px;">
         </div>
         <div class="media team">
-            <img class="mr-3" src="images/IMG_8442.jpg" style="object-fit:cover; width:80px; height:80px;">
+            <img class="mr-3" src="images/thumb3.jpg" style="object-fit:cover; width:80px; height:80px;">
             <div class="media-body">
                 <h4 class="mt-0" style="border-left: 4px solid green; padding-left: 7px;">Tu Tran</h5>
                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
@@ -258,6 +269,12 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
