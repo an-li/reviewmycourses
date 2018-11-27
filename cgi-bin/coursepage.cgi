@@ -240,10 +240,8 @@ def printCourseInfo(courseInfo, courseFound):
         print("<p>Jump to <a href=\"#info\" class=\"btn btn-success\">Course info</a> <a href=\"#documents\" class=\"btn btn-success\">Documents</a></p>")
     print("</section>")
     print("""</main>
-        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\"
-            crossorigin=\"anonymous\"></script>
-        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\"
-            crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" crossorigin=\"anonymous\"></script>
         <script>
             $('#paginateDocuments').easyPaginate({
                 paginateElement: 'p',

@@ -150,6 +150,7 @@ def printReviewForm(course):
                     outline: none;
                 }
             </style>
+            <script src="http://code.jquery.com/jquery-latest.js"></script>
         </head>
 
         <body>
@@ -172,7 +173,7 @@ def printReviewForm(course):
                         <a class=\"nav-link\" href=\"../about.html\">About</a>
                     </li>
                 </ul>
-                <form class=\"form-inline my-2 my-lg-0\" action=\"search.py\" method=\"GET\">
+                <form class=\"form-inline my-2 my-lg-0\" action=\"search.cgi\" method=\"GET\">
                     <input class=\"form-control mr-sm-2\" type=\"text\" name=\"query\" placeholder=\"Search courses\" aria-label=\"Search\">
                     <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
                 </form>
@@ -463,10 +464,8 @@ def printReviewForm(course):
                 </section>
             </main>
 
-            <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\"
-                crossorigin=\"anonymous\"></script>
-            <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\"
-                crossorigin=\"anonymous\"></script>
+           <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" crossorigin=\"anonymous\"></script>
+            <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" crossorigin=\"anonymous\"></script>
         </body>
 
         </html>""")
