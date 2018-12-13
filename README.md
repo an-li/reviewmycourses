@@ -37,6 +37,7 @@ Notes:
 * initall.py resets the entire database and initializes the courses database with course info from courses.list file.
 * initcourses.py initializes the courses database with course info from courses.list file only. To run every time courses.list has been edited or replaced.
 * initdocuments.py initializes the database for documents. To run every time the contents of the documents folder have been edited on the server without using the upload form on the course pages.
+* Please edit the path to the .htpasswd file in .htaccess in /cgi-bin/initialization/ according to the xampp installation location on the operating system.
 
 Known issues:
 * Entering non-ASCII characters in search box will cause the page to display nothing.

@@ -1,0 +1,4 @@
+AuthUserFile c:/xampp/cgi-bin/initialization/.htpasswd
+AuthName "Please authenticate to initialize"
+AuthType Basic
+require user root
